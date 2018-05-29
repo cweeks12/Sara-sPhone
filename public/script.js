@@ -7,6 +7,11 @@ var vue = new Vue({
     created: function() {
         this.get();
     },
+    computed: {
+        humanReset: function() {
+            return new Date(this.resetDate).toString();
+        }
+    },
     methods: {
         add: function(){
             axios.get("/add").then(response => {
